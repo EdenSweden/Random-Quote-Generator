@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Nanum+Pen+Script&display=swap");
+
+@mixin btn-styles {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  color: white;
+  background: radial-gradient(at top right, lightBlue, blue);
+  -webkit-background: radial-gradient(at top right, lightBlue, blue);
+  -moz-background: radial-gradient(at top right, lightBlue, blue);
+  -o-background: radial-gradient(at top right, lightBlue, blue);
+  border: 2px solid navy;
+  padding: 8px;
+  font-family: "Nanum Pen Script", cursive;
+  line-height: 10px;
+
+  &:hover {
+    cursor: pointer;
+    border: 2px solid blue;
+    background: radial-gradient(at top right, cornflowerBlue, navy);
+    -webkit-background: radial-gradient(at top right, cornflowerBlue, navy);
+    -moz-background: radial-gradient(at top right, cornflowerBlue, navy);
+    -o-background: radial-gradient(at top right, cornflowerBlue, navy);
+    color: gold;
+    transition: 0.5s;
+  }
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, navy, cornflowerBlue);
+  -webkit-background: linear-gradient(to right, navy, cornflowerBlue);
+  -moz-background: linear-gradient(to right, navy, cornflowerBlue);
+  -o-background: linear-gradient(to right, navy, cornflowerBlue);
+}
+
+#quote-box {
+  display: grid;
+  grid-template-rows: min-content min-content;/*2fr 1fr;*/
+  width: 75%;
+  height: auto;
+  background-color: white;
+  background: url("https://i7x7p5b7.stackpathcdn.com/codrops/wp-content/uploads/2019/01/Screen-Shot-2019-01-21-at-14.42.28.png");
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20vh auto;
+}
+
+#text,
+#author {
+  font-family: "Nanum Pen Script", sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  color: navy;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+#text{
+  margin-bottom: 0;
+}
+#author{
+  margin-top: 0;
+}
+.buttons {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 30px;
+  padding-bottom: 0;
+
+  #tweet-quote {
+    @include btn-styles;
+    padding: 10px;
+    width: 32px;
+    justify-self: start;
+    margin-left: 1em;
+  }
+
+  #new-quote {
+    @include btn-styles;
+    float: right;
+    width: 200px;
+    font-weight: bold;
+    font-size: 30px;
+    justify-self: end;
+    margin-right: 1em;
+  }
+}
+
+.fab {
+  font-size: 30px;
+}
+@media only screen and (max-width: 768px) {
+  #quote-box {
+    width: 98vw;
+    max-width: 98%;
+    top: 10px;
+    left: 2px;
+    right: 2px;
+    padding: 5px;
+  }
+  #text,
+  #author {
+    margin: 5px;
+    font-size: 2rem;
+  }
+
+  .buttons {
+    margin-bottom: 2em;
+  }
+}
+
+@media only screen and (max-width: 330px){
+  
+  #quote-box{
+    width: 94vw;
+    max-width: 94vw;
+  }
+  #text {
+    word-wrap: break-word;
+    font-size: 25px;
+    width: 85vw;
+  }
+  
+  .buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    margin-top: 0;
+    max-width: 150px;
+    
+    
+  }
+  .buttons #tweet-quote{
+    padding: 3px;
+    width: 25px;
+    height: 25px;
+    margin-bottom: 1em;
+    margin-left: 10px;
+  }
+  
+  .buttons #new-quote{
+    font-size: 33px;
+    float: none;
+    margin-left: 10px;
+    margin-right: 0;
+    width: 150px;
+  }
+  
+  .fab {
+    font-size: 25px;
+  }
+  
+}
+  
+  
